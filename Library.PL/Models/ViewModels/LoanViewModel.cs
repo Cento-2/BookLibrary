@@ -1,4 +1,5 @@
 ﻿using Library.BLL.Models;
+using Library.DAL.Entities;
 
 namespace Library.PL.Models.ViewModels
 {
@@ -8,7 +9,8 @@ namespace Library.PL.Models.ViewModels
         public DateTime LoanDate { get; set; }
         public double TicketPrice { get; set; }
         public int BookId { get; set; }
-        public BookModel Book { get; set; }
+        public Book Book { get; set; }
         public int MemberId { get; set; }
+        public Member Member { get; set; }
     }
 }
