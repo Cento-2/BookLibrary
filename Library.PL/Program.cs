@@ -4,6 +4,7 @@ using Library.BLL.Services;
 using Library.DAL;
 using Library.DAL.Interfaces;
 using Library.DAL.Repositories;
+using Library.PL.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
