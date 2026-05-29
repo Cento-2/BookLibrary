@@ -13,7 +13,7 @@ namespace Library.DAL.Entities
         public double TicketPrice { get; set; }
         public int BookId { get; set; }
         public Book Book { get; set; }
-        public string MemberId { get; set; }
+        public int MemberId { get; set; }
         public Member Member { get; set; }
     }
 }

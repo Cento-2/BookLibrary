@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.DAL.Migrations
 {
     [DbContext(typeof(LibraryManagementDbContext))]
-    [Migration("20260529093235_first-migration")]
-    partial class firstmigration
+    [Migration("20260529112632_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,11 +66,7 @@ namespace Library.DAL.Migrations
                     b.Property<DateTime>("LoanDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MemberId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MemberId1")
+                    b.Property<int>("MemberId")
                         .HasColumnType("int");
 
                     b.Property<double>("TicketPrice")
@@ -80,7 +76,7 @@ namespace Library.DAL.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.HasIndex("MemberId1");
+                    b.HasIndex("MemberId");
 
                     b.ToTable("Loans");
                 });
@@ -120,7 +116,7 @@ namespace Library.DAL.Migrations
 
                     b.HasOne("Library.DAL.Entities.Member", "Member")
                         .WithMany("Loans")
-                        .HasForeignKey("MemberId1")
+                        .HasForeignKey("MemberId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

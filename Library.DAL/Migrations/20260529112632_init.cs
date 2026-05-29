@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Library.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class firstmigration : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,8 +51,7 @@ namespace Library.DAL.Migrations
                     LoanDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TicketPrice = table.Column<double>(type: "float", nullable: false),
                     BookId = table.Column<int>(type: "int", nullable: false),
-                    MemberId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MemberId1 = table.Column<int>(type: "int", nullable: false)
+                    MemberId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,8 +63,8 @@ namespace Library.DAL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Loans_Members_MemberId1",
-                        column: x => x.MemberId1,
+                        name: "FK_Loans_Members_MemberId",
+                        column: x => x.MemberId,
                         principalTable: "Members",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -77,9 +76,9 @@ namespace Library.DAL.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Loans_MemberId1",
+                name: "IX_Loans_MemberId",
                 table: "Loans",
-                column: "MemberId1");
+                column: "MemberId");
         }
 
         /// <inheritdoc />
