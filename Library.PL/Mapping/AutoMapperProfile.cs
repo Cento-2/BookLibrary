@@ -2,7 +2,7 @@
 using Library.BLL.Models;
 using Library.DAL.Entities;
 
-namespace Library.BLL.Mapping
+namespace Library.PL.Mapping
 {
     public class AutoMapperProfile : Profile
     {
